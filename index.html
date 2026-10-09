@@ -416,7 +416,7 @@
   .toast { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%) translateY(100px); background: linear-gradient(135deg, var(--gold), #ffd700); color: #1a2b4c; padding: 14px 28px; border-radius: 12px; font-weight: 700; box-shadow: 0 10px 30px rgba(0,0,0,0.4); transition: transform 0.4s ease; z-index: 2000; font-size: 0.95rem; text-align: center; max-width: 90vw; }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  /* ====== الفوتر الملكي بعرض الموقع ====== */
+  /* ====== الفوتر الملكي ====== */
   footer {
     text-align: center;
     padding: 40px var(--container-pad) 30px;
@@ -454,7 +454,6 @@
   footer .footer-card::before { top: 0; }
   footer .footer-card::after { bottom: 0; }
 
-  /* ====== العنوان الجديد: تحت إشراف  فاطمة الزهراء حامد  ====== */
   footer .footer-title {
     font-family: 'Amiri', serif;
     font-size: clamp(1.5rem, 4vw, 2.1rem);
@@ -493,7 +492,6 @@
     50% { transform: translateY(-5px) scale(1.05); }
   }
 
-  /* ====== بطاقة رابط الفيسبوك ====== */
   footer .footer-supervisors {
     display: flex;
     justify-content: center;
@@ -548,7 +546,6 @@
     font-weight: 900;
   }
 
-  /* ====== الفروع ====== */
   footer .footer-branches {
     margin: 22px auto 24px;
     padding: 20px clamp(14px, 2.5vw, 28px);
@@ -614,7 +611,6 @@
     opacity: 0.85;
   }
 
-  /* ====== التواصل ====== */
   footer .footer-contact {
     display: flex;
     justify-content: center;
@@ -664,7 +660,6 @@
     box-shadow: 0 10px 28px rgba(37,211,102,0.6);
   }
 
-  /* ====== الآية القرآنية أسفل الفوتر ====== */
   footer .footer-copyright {
     margin-top: 22px;
     padding-top: 20px;
@@ -716,6 +711,320 @@
     font-weight: 800;
   }
 
+  /* ============================================
+     ABOUT TAB — تبويب حول الدار
+     ============================================ */
+  .about-hero {
+    background: linear-gradient(135deg, rgba(212,175,55,0.15), rgba(123,47,247,0.10));
+    border: 3px solid var(--gold);
+    border-radius: 28px;
+    padding: 40px 25px 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25), inset 0 0 40px rgba(212,175,55,0.08);
+  }
+  body.dark-mode .about-hero {
+    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(123,47,247,0.15));
+  }
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+    pointer-events: none;
+  }
+  .about-hero::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px dashed rgba(212,175,55,0.35);
+    border-radius: 20px;
+    pointer-events: none;
+  }
+  .about-logo-big {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #ffd700, var(--gold));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    box-shadow: 0 15px 40px rgba(212,175,55,0.55), inset 0 -4px 12px rgba(0,0,0,0.15);
+    border: 4px solid rgba(255,255,255,0.35);
+    animation: hijabFloat 3.5s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+  }
+  .about-hero h2 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #d4af37, #ffd700, #fff2b0, #ffd700, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(212,175,55,0.45));
+    position: relative; z-index: 1;
+    font-weight: 700;
+  }
+  .about-hero .about-tagline {
+    font-family: 'Amiri', serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    color: #fff;
+    line-height: 1.9;
+    max-width: 680px;
+    margin: 0 auto 18px;
+    position: relative; z-index: 1;
+    opacity: 0.95;
+    padding: 0 10px;
+  }
+  .about-hero .about-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .about-badge {
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(212,175,55,0.18);
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    transition: all 0.3s;
+  }
+  .about-badge:hover {
+    transform: translateY(-2px);
+    background: rgba(212,175,55,0.3);
+    box-shadow: 0 6px 18px rgba(212,175,55,0.4);
+  }
+  body:not(.dark-mode) .about-badge { color: #b8860b; }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .about-feature {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 15px 16px;
+    background: var(--card-bg);
+    border: 2px solid rgba(212,175,55,0.2);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+  }
+  .about-feature:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(212,175,55,0.3);
+  }
+  .about-feature .af-icon {
+    width: 46px; height: 46px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--gold), #ffd700);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(212,175,55,0.35);
+  }
+  .about-feature .af-body h4 {
+    font-family: 'Amiri', serif;
+    font-size: 1.05rem;
+    color: var(--teal);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  body.dark-mode .about-feature .af-body h4 { color: var(--gold); }
+  .about-feature .af-body p {
+    font-size: 0.82rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  .about-branches-card {
+    background: var(--card-bg);
+    border: 2px solid rgba(212,175,55,0.35);
+    border-radius: 22px;
+    padding: 22px 18px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .about-branches-card h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .about-branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .about-branch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(123,47,247,0.05));
+    border: 1.5px solid rgba(212,175,55,0.25);
+    border-radius: 14px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+  .about-branch:hover {
+    background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(255,215,0,0.15));
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(212,175,55,0.3);
+  }
+  .about-branch.wa-branch {
+    cursor: pointer;
+    border-color: rgba(37,211,102,0.5);
+    background: linear-gradient(135deg, rgba(37,211,102,0.12), rgba(212,175,55,0.08));
+  }
+  .about-branch.wa-branch:hover {
+    background: linear-gradient(135deg, rgba(37,211,102,0.28), rgba(212,175,55,0.15));
+    border-color: #25D366;
+    color: #fff;
+  }
+
+  .about-warning {
+    background: linear-gradient(135deg, rgba(255,179,71,0.12), rgba(255,94,107,0.08));
+    border: 2px solid #ffb347;
+    border-radius: 20px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .about-warning h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+    color: #ffb347;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .about-warning p {
+    font-size: 0.86rem;
+    line-height: 1.9;
+    color: var(--text-color);
+    margin-bottom: 8px;
+  }
+  .about-warning ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  .about-warning ul li {
+    padding: 6px 0 6px 22px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    position: relative;
+    color: var(--text-color);
+  }
+  .about-warning ul li::before {
+    content: '✓';
+    position: absolute;
+    right: 0;
+    color: var(--success);
+    font-weight: 900;
+  }
+
+  .about-contact-card {
+    background: var(--card-bg);
+    border: 2px solid rgba(212,175,55,0.35);
+    border-radius: 22px;
+    padding: 22px 18px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .about-contact-card h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .about-contact-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .about-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(123,47,247,0.08));
+    border: 2px solid rgba(212,175,55,0.3);
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .about-contact-link:hover {
+    background: linear-gradient(135deg, rgba(212,175,55,0.28), rgba(255,215,0,0.18));
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212,175,55,0.35);
+  }
+  .about-contact-link.fb-link:hover { border-color: #1877f2; background: linear-gradient(135deg, rgba(24,119,242,0.18), rgba(212,175,55,0.12)); }
+  .about-contact-link.wa-link:hover { border-color: #25D366; background: linear-gradient(135deg, rgba(37,211,102,0.18), rgba(212,175,55,0.12)); }
+  .about-contact-link.mail-link:hover { border-color: var(--gold); background: linear-gradient(135deg, rgba(212,175,55,0.28), rgba(255,215,0,0.18)); }
+
+  .about-copyright {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.18), rgba(212,175,55,0.08));
+    border-radius: 18px;
+    border: 1.5px solid rgba(212,175,55,0.3);
+    margin-top: 15px;
+  }
+  .about-copyright strong {
+    display: block;
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  .about-copyright p {
+    font-size: 0.82rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .about-copyright .about-verse {
+    font-family: 'Amiri', serif;
+    font-size: 1.05rem;
+    color: var(--gold);
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(212,175,55,0.35);
+    font-weight: 700;
+  }
+
   @media (max-width: 480px) {
     footer .footer-card { padding: 28px 16px 22px; border-radius: 20px; }
     footer .branch-chip { font-size: 0.78rem; padding: 7px 12px; }
@@ -723,6 +1032,9 @@
     footer .footer-email-btn,
     footer .footer-wa-btn { width: 100%; justify-content: center; }
     footer .footer-title .woman-icon { width: 42px; height: 42px; font-size: 1.5rem; }
+    .about-hero { padding: 28px 16px 22px; }
+    .about-logo-big { width: 85px; height: 85px; font-size: 2.6rem; }
+    .about-contact-link { width: 100%; justify-content: center; }
   }
 
   .action-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 15px; }
@@ -1078,6 +1390,167 @@
     <div class="kid-friendly"><span>📖</span><span>اضغط على أي بطاقة لتقرأ القصة الكرتونية للسورة</span></div>
     <div class="garden-grid" id="gardenGrid"></div>
   </div>
+
+  <!-- ===== TAB: ABOUT — حول الدار ===== -->
+  <div class="section" id="section-about">
+    <h2 class="section-title"><span class="emoji">ℹ️</span> <span>حول الدار</span></h2>
+
+    <div class="about-hero">
+      <div class="about-logo-big">📖</div>
+      <h2>دار القرآن الكريم</h2>
+      <p class="about-tagline">
+        منارة قرآنية تعليمية تربوية تجمع بين أصالة المنهج وحداثة التقنية.
+        نسعى لخدمة كتاب الله تعالى بتحفيظه وتدبره وتيسير الوصول إليه لكل مسلم في كل مكان.
+      </p>
+      <div class="about-badges">
+        <span class="about-badge">🕌 فروع متعددة</span>
+        <span class="about-badge">📖 القرآن كاملًا</span>
+        <span class="about-badge">🎧 8 قراء</span>
+        <span class="about-badge">📴 يعمل أوفلاين</span>
+        <span class="about-badge">🌍 عربي بالكامل</span>
+      </div>
+    </div>
+
+    <!-- الرؤية والرسالة -->
+    <div class="about-features">
+      <div class="about-feature">
+        <div class="af-icon">🎯</div>
+        <div class="af-body">
+          <h4>رؤيتنا</h4>
+          <p>أن تكون الدار نموذجًا رائدًا في تحفيظ القرآن الكريم وتدبره إلكترونيًا، يخدم كل بيت مسلم في العالم.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">💚</div>
+        <div class="af-body">
+          <h4>رسالتنا</h4>
+          <p>تيسير حفظ القرآن الكريم وتلاوته وتدبره بأدوات تفاعلية حديثة، وتقديم تجربة قرآنية شاملة للأطفال والكبار.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🌟</div>
+        <div class="af-body">
+          <h4>قيمنا</h4>
+          <p>الإتقان، الأمانة، الإخلاص، خدمة كتاب الله، ورعاية الناشئة على حب القرآن الكريم.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- المزايا -->
+    <div class="about-features">
+      <div class="about-feature">
+        <div class="af-icon">📖</div>
+        <div class="af-body">
+          <h4>المصحف الكامل</h4>
+          <p>جميع سور القرآن الـ 114 بالنص العثماني مع إمكانية العمل أوفلاين.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🎧</div>
+        <div class="af-body">
+          <h4>تلاوات صوتية</h4>
+          <p>8 قراء بأصوات عذبة، مع تتبع الكلمات أثناء التلاوة.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🎯</div>
+        <div class="af-body">
+          <h4>اختبارات ذكية</h4>
+          <p>3 مستويات: للأطفال، اختبار سورة، واختبار شامل بمؤقت.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🧠</div>
+        <div class="af-body">
+          <h4>حفظ ذكي</h4>
+          <p>جلسات حفظ بالتلاشي التدريجي والتسميع الأعمى والمراجعة المتباعدة.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🌱</div>
+        <div class="af-body">
+          <h4>حديقة الحفاظ</h4>
+          <p>قصص كرتونية مبهجة للأطفال تربطهم بالسور الكريمة.</p>
+        </div>
+      </div>
+      <div class="about-feature">
+        <div class="af-icon">🎨</div>
+        <div class="af-body">
+          <h4>6 ألوان ملكية</h4>
+          <p>اختر لونك المفضل من بين 6 ثيمات أنيقة، مع وضع ليلي.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الفروع -->
+    <div class="about-branches-card">
+      <h3>🕌 فروع الدار</h3>
+      <div class="about-branches-grid">
+        <a href="https://wa.me/201018415991" target="_blank" rel="noopener" class="about-branch wa-branch">
+          📚 فرع الدراسات الإسلامية - المنصورة
+        </a>
+        <span class="about-branch">🌸 فرع الموافي - شربين</span>
+        <span class="about-branch">🌿 فرع ترعة غنيم</span>
+        <span class="about-branch">🕌 فرع الصديق</span>
+        <span class="about-branch">🌟 فرع عزبة البط</span>
+        <span class="about-branch">🌺 فرع أبو شعير</span>
+        <span class="about-branch">🌼 فرع منشأة النصر</span>
+        <span class="about-branch">💫 فرع الإمام</span>
+      </div>
+    </div>
+
+    <!-- الإشراف -->
+    <div class="about-branches-card">
+      <h3>👩‍🏫 الإشراف العام</h3>
+      <div class="about-branches-grid">
+        <a href="https://www.facebook.com/om.hazem.1272010" target="_blank" rel="noopener" class="about-branch wa-branch" style="border-color: rgba(24,119,242,0.5); background: linear-gradient(135deg, rgba(24,119,242,0.15), rgba(212,175,55,0.1));">
+          🌸 الحاجة فاطمة الزهراء حامد — الصفحة الرسمية
+        </a>
+      </div>
+    </div>
+
+    <!-- التنبيه -->
+    <div class="about-warning">
+      <h3>⚠️ تنبيه مهم</h3>
+      <p>هذا التطبيق أداة تعليمية مجانية لخدمة كتاب الله تعالى، وليس بديلًا عن:</p>
+      <ul>
+        <li>حلقات التحفيظ المباشرة مع معلم مجيد.</li>
+        <li>المراجعة المستمرة مع شيخ متقن.</li>
+        <li>التعلم على يد أهل العلم والتخصص.</li>
+      </ul>
+      <p>ننصح دائمًا بالجمع بين التقنية والمعلم الماهر لتحقيق الإتقان الكامل.</p>
+    </div>
+
+    <!-- التواصل -->
+    <div class="about-contact-card">
+      <h3>📬 التواصل والاستفسارات</h3>
+      <p style="font-size:0.9rem; line-height:1.8; opacity:0.9; margin-bottom:12px;">
+        يسعدنا تواصلكم معنا لأي استفسار أو اقتراح أو للانضمام لفروع الدار.
+      </p>
+      <div class="about-contact-actions">
+        <a href="https://www.facebook.com/Quraanschol" target="_blank" rel="noopener" class="about-contact-link fb-link">
+          <span>📘</span> صفحة الدار على فيسبوك
+        </a>
+        <a href="https://wa.me/201004106976" target="_blank" rel="noopener" class="about-contact-link wa-link">
+          <span>💬</span> واتساب: +20 10 04106976
+        </a>
+        <a href="mailto:byt@muslim.com" class="about-contact-link mail-link">
+          <span>✉️</span> byt@muslim.com
+        </a>
+      </div>
+    </div>
+
+    <!-- الحقوق -->
+    <div class="about-copyright">
+      <strong>© دار القرآن الكريم</strong>
+      <p>منصة تعليمية قرآنية — جميع الحقوق محفوظة<br>
+      المطوّر: <strong style="color: var(--gold);">byt@muslim.com</strong></p>
+      <div class="about-verse">
+        ﴿ وَلَقَدْ يَسَّرْنَا الْقُرْآنَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ ﴾
+        <br><span style="font-size: 0.85rem; opacity: 0.9;">سورة القمر — الآية ١٧</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="garden-modal" id="gardenModal">
@@ -1092,26 +1565,20 @@
 
 <footer>
   <div class="footer-card">
-    
-    <!-- العنوان الجديد: تحت إشراف الحاجة فاطمة الزهراء مع أيقونة امرأة منقبة -->
     <div class="footer-title">
-      <span>🌸 تحت إشراف
-      فاطمة الزهراء حامد
-      <span>🌸</span>
+      <span>🌸 تحت إشراف فاطمة الزهراء حامد 🌸</span>
     </div>
-    
-    <!-- بطاقة رابط الفيسبوك -->
+
     <div class="footer-supervisors">
       <div class="footer-supervisor-row">
         <a href="https://www.facebook.com/om.hazem.1272010" target="_blank" rel="noopener" class="supervisor-name">
           <span>📘</span>
-          <span>صفحة  فاطمة الزهراء حامد على الفيسبوك</span>
+          <span>صفحة فاطمة الزهراء حامد على الفيسبوك</span>
           <span class="fb-icon">f</span>
         </a>
       </div>
     </div>
-    
-    <!-- الفروع -->
+
     <div class="footer-branches">
       <div class="branches-title">🕌 فروع الدار</div>
       <div class="branches-grid">
@@ -1120,15 +1587,14 @@
         </a>
         <span class="branch-chip">🌸 فرع الموافي - شربين</span>
         <span class="branch-chip">🌿 فرع ترعة غنيم</span>
-        <span class="branch-chip">🕌 فرع  الصديق</span>
+        <span class="branch-chip">🕌 فرع الصديق</span>
         <span class="branch-chip">🌟 فرع عزبة البط</span>
         <span class="branch-chip">🌺 فرع أبو شعير</span>
         <span class="branch-chip">🌼 فرع منشأة النصر</span>
         <span class="branch-chip">💫 فرع الإمام</span>
       </div>
     </div>
-    
-    <!-- التواصل -->
+
     <div class="footer-contact">
       <a href="https://www.facebook.com/Quraanschol" target="_blank" rel="noopener" class="footer-fb-btn">
         <span>📘</span> صفحة الدار على الفيسبوك
@@ -1140,8 +1606,7 @@
         <span>✉️</span> byt@muslim.com
       </a>
     </div>
-    
-    <!-- الآية القرآنية بدل "جميع الحقوق محفوظة" -->
+
     <div class="footer-copyright">
       <div class="quran-verse">
         بَلْ هُوَ آيَاتٌ بَيِّنَاتٌ فِي صُدُورِ الَّذِينَ أُوتُوا الْعِلْمَ
@@ -1151,7 +1616,6 @@
         المطور: <strong>byt@muslim.com</strong>
       </div>
     </div>
-    
   </div>
 </footer>
 
@@ -1468,7 +1932,8 @@ function createTabs(){
     {id:'plans',label:'📖 حفظ'},
     {id:'orderGame',label:'🔤 ترتيب'},
     {id:'progress',label:'📊 تقدمي'},
-    {id:'garden',label:'🌸 حديقة الحفاظ'}
+    {id:'garden',label:'🌸 حديقة الحفاظ'},
+    {id:'about',label:'ℹ️ حول الدار'}
   ];
   const c=document.getElementById('tabsContainer');
   if(!c)return;
@@ -3056,7 +3521,7 @@ function initApp(){
     updateOfflineStatus();
     document.getElementById('settingsModal')?.addEventListener('click',function(e){if(e.target===this)closeSettingsModal();});
     document.getElementById('registerModal')?.addEventListener('click',function(e){if(e.target===this)closeRegisterModal();});
-    console.log('✅ دار القرآن الكريم — مع المزايا الذكية للحفظ و6 ألوان');
+    console.log('✅ دار القرآن الكريم — مع تبويب حول الدار + 6 ألوان');
   }catch(e){console.error('❌',e);}
 }
 window.addEventListener('beforeunload',()=>{stopAudio();stopWardSession();});
