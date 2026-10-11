@@ -472,25 +472,6 @@
     gap: 12px;
     flex-wrap: wrap;
   }
-  footer .footer-title .woman-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #7b2ff7, #ec4899);
-    font-size: 1.85rem;
-    line-height: 1;
-    flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(236,72,153,0.45), inset 0 -2px 8px rgba(0,0,0,0.15);
-    animation: hijabFloat 3.5s ease-in-out infinite;
-    -webkit-text-fill-color: initial;
-  }
-  @keyframes hijabFloat {
-    0%,100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-5px) scale(1.05); }
-  }
 
   footer .footer-supervisors {
     display: flex;
@@ -509,10 +490,6 @@
     border: 1px solid rgba(212,175,55,0.3);
     font-family: 'Amiri', serif;
     font-size: clamp(1rem, 2.6vw, 1.2rem);
-  }
-  footer .supervisor-label {
-    color: var(--gold);
-    font-weight: 700;
   }
   footer a.supervisor-name {
     color: #fff;
@@ -634,31 +611,12 @@
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     font-family: 'Cairo', sans-serif;
   }
-  footer .footer-fb-btn {
-    background: linear-gradient(135deg, #1877f2, #0d5fd1);
-    color: #fff;
-  }
-  footer .footer-fb-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 28px rgba(24,119,242,0.55);
-  }
-  footer .footer-email-btn {
-    background: linear-gradient(135deg, var(--gold), #ffd700);
-    color: #1a2b4c;
-  }
-  footer .footer-email-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 28px rgba(212,175,55,0.6);
-  }
-  footer .footer-wa-btn {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: #fff;
-    direction: ltr;
-  }
-  footer .footer-wa-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 28px rgba(37,211,102,0.6);
-  }
+  footer .footer-fb-btn { background: linear-gradient(135deg, #1877f2, #0d5fd1); color: #fff; }
+  footer .footer-fb-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 28px rgba(24,119,242,0.55); }
+  footer .footer-email-btn { background: linear-gradient(135deg, var(--gold), #ffd700); color: #1a2b4c; }
+  footer .footer-email-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 28px rgba(212,175,55,0.6); }
+  footer .footer-wa-btn { background: linear-gradient(135deg, #25D366, #128C7E); color: #fff; direction: ltr; }
+  footer .footer-wa-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 28px rgba(37,211,102,0.6); }
 
   footer .footer-copyright {
     margin-top: 22px;
@@ -678,8 +636,6 @@
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 10px rgba(212,175,55,0.4));
     padding: 12px 16px;
-    border-radius: 14px;
-    position: relative;
     display: inline-block;
     max-width: 100%;
   }
@@ -692,24 +648,9 @@
     -webkit-text-fill-color: var(--gold);
     opacity: 0.85;
   }
-  footer .quran-ref {
-    display: block;
-    margin-top: 8px;
-    font-size: 0.82rem;
-    color: var(--gold);
-    opacity: 0.85;
-    font-weight: 700;
-    font-family: 'Cairo', sans-serif;
-  }
-  footer .footer-dev {
-    margin-top: 14px;
-    font-size: clamp(0.8rem, 2vw, 0.9rem);
-    opacity: 0.9;
-  }
-  footer .footer-dev strong {
-    color: var(--gold);
-    font-weight: 800;
-  }
+  footer .quran-ref { display: block; margin-top: 8px; font-size: 0.82rem; color: var(--gold); opacity: 0.85; font-weight: 700; }
+  footer .footer-dev { margin-top: 14px; font-size: clamp(0.8rem, 2vw, 0.9rem); opacity: 0.9; }
+  footer .footer-dev strong { color: var(--gold); font-weight: 800; }
 
   /* ============================================
      ABOUT TAB — تبويب حول الدار
@@ -1025,13 +966,217 @@
     font-weight: 700;
   }
 
+  /* ============================================
+     قسم تحميل المشروع
+     ============================================ */
+  .download-project-card {
+    background: linear-gradient(135deg, rgba(123,47,247,0.10), rgba(212,175,55,0.10));
+    border: 3px solid var(--purple);
+    border-radius: 24px;
+    padding: 28px 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 15px 40px rgba(123,47,247,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  body.dark-mode .download-project-card {
+    background: linear-gradient(135deg, rgba(123,47,247,0.18), rgba(212,175,55,0.12));
+  }
+  .download-project-card::before {
+    content: '';
+    position: absolute;
+    top: -50px; left: -50px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(123,47,247,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .download-project-card h3 {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #7b2ff7, #ffd700, #7b2ff7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 12px rgba(123,47,247,0.35));
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    position: relative; z-index: 1;
+  }
+  .download-project-card .dp-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    position: relative; z-index: 1;
+  }
+  .download-main-btn {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto 22px;
+    padding: 18px 26px;
+    background: linear-gradient(135deg, #7b2ff7, #ff6b9d, #d4af37);
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(123,47,247,0.45), inset 0 -3px 12px rgba(0,0,0,0.15);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .download-main-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transition: left 0.6s;
+  }
+  .download-main-btn:hover::before { left: 100%; }
+  .download-main-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(123,47,247,0.6), inset 0 -3px 12px rgba(0,0,0,0.15);
+  }
+  .download-main-btn .dm-icon {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-left: 8px;
+    animation: downloadPulse 1.8s ease-in-out infinite;
+    vertical-align: middle;
+  }
+  @keyframes downloadPulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  .download-files-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.15rem;
+    color: var(--gold);
+    text-align: center;
+    margin: 20px 0 14px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    position: relative; z-index: 1;
+  }
+  .download-files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    position: relative; z-index: 1;
+  }
+  .download-file-item {
+    background: var(--card-bg);
+    border: 2px solid rgba(123,47,247,0.3);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .download-file-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--purple);
+    box-shadow: 0 12px 30px rgba(123,47,247,0.25);
+  }
+  .download-file-item .df-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7b2ff7, #ffd700);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(123,47,247,0.3);
+  }
+  .download-file-item .df-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .download-file-item .df-name {
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .download-file-item .df-meta {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    font-weight: 600;
+  }
+  .download-file-item .df-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .download-file-item .df-btn {
+    width: 34px; height: 34px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.95rem;
+    transition: all 0.25s;
+    text-decoration: none;
+    color: #fff;
+  }
+  .download-file-item .df-btn.df-download {
+    background: linear-gradient(135deg, #7b2ff7, #a855f7);
+  }
+  .download-file-item .df-btn.df-download:hover {
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(123,47,247,0.5);
+  }
+  .download-file-item .df-btn.df-copy {
+    background: linear-gradient(135deg, var(--gold), #ffd700);
+    color: #1a2b4c;
+  }
+  .download-file-item .df-btn.df-copy:hover {
+    transform: scale(1.15);
+    box-shadow: 0 5px 15px rgba(212,175,55,0.5);
+  }
+  .download-note {
+    margin-top: 18px;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, rgba(6,214,160,0.1), rgba(26,188,156,0.08));
+    border: 2px dashed var(--success);
+    border-radius: 14px;
+    text-align: center;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    position: relative; z-index: 1;
+  }
+  .download-note strong { color: var(--success); }
+
+  @media (max-width: 480px) {
+    .download-files-grid { grid-template-columns: 1fr; }
+    .download-main-btn { font-size: 0.95rem; padding: 16px 20px; }
+    .download-file-item .df-name { font-size: 0.9rem; }
+  }
+
   @media (max-width: 480px) {
     footer .footer-card { padding: 28px 16px 22px; border-radius: 20px; }
     footer .branch-chip { font-size: 0.78rem; padding: 7px 12px; }
     footer .footer-fb-btn,
     footer .footer-email-btn,
     footer .footer-wa-btn { width: 100%; justify-content: center; }
-    footer .footer-title .woman-icon { width: 42px; height: 42px; font-size: 1.5rem; }
     .about-hero { padding: 28px 16px 22px; }
     .about-logo-big { width: 85px; height: 85px; font-size: 2.6rem; }
     .about-contact-link { width: 100%; justify-content: center; }
@@ -1509,6 +1654,28 @@
       </div>
     </div>
 
+    <!-- ====== قسم تحميل المشروع الكامل ====== -->
+    <div class="download-project-card">
+      <h3>📦 <span>تحميل المشروع الكامل</span> 📦</h3>
+      <p class="dp-subtitle">
+        حمّل نسخة كاملة من المشروع على جهازك مع جميع السور والتفاسير، لتعمل جميع الملفات بدون إنترنت بعد التحميل.
+      </p>
+
+      <a href="https://drive.google.com/drive/folders/1dEqnqHK4xa4KqHFZ7QkB9YZ92nuijV9W"
+         target="_blank" rel="noopener"
+         class="download-main-btn">
+        <span class="dm-icon">⬇️</span> حمّل المشروع الآن من Google Drive
+      </a>
+
+      <div class="download-files-title">📁 <span>ملفات المشروع المتوفرة</span> 📁</div>
+      <div class="download-files-grid" id="downloadFilesGrid"></div>
+
+      <div class="download-note">
+        💡 <strong>ملاحظة:</strong> يتم تحديث الملفات باستمرار. احتفظ بالمجلد في مفضلتك للحصول على أحدث نسخة.
+        <br>📌 لتحميل جميع الملفات دفعة واحدة، اضغط <strong>الزر الأرجواني</strong> في الأعلى، ثم اختر "تنزيل الكل".
+      </div>
+    </div>
+
     <!-- التنبيه -->
     <div class="about-warning">
       <h3>⚠️ تنبيه مهم</h3>
@@ -1958,6 +2125,7 @@ function switchSection(section){
   if(section==='progress')renderChecklist();
   if(section==='orderGame'&&!currentOrderVerse)newOrderGame();
   if(section==='garden')renderGarden();
+  if(section==='about')renderDownloadFiles();
 }
 
 async function fetchSurah(num){
@@ -3500,6 +3668,70 @@ function openGardenModal(num){
 function closeGardenModal(){document.getElementById('gardenModal').classList.remove('show');}
 document.getElementById('gardenModal')?.addEventListener('click',function(e){if(e.target===this)closeGardenModal();});
 
+/* ==========================================================
+   قسم تحميل المشروع — الملفات المتوفرة
+   ========================================================== */
+const PROJECT_FILES = [
+  { name: 'آل عمران.html', icon: '🕌', size: '113 KB' },
+  { name: 'القرآن كامل.html', icon: '📖', size: '175 KB' },
+  { name: 'تفسيرك الخاص.html', icon: '🌸', size: '91 KB' },
+  { name: 'جزء 30.html', icon: '🌙', size: '175 KB' },
+  { name: 'سورة البقرة.html', icon: '🐄', size: '108 KB' }
+];
+
+const FOLDER_URL = 'https://drive.google.com/drive/folders/1dEqnqHK4xa4KqHFZ7QkB9YZ92nuijV9W';
+
+function renderDownloadFiles() {
+  const grid = document.getElementById('downloadFilesGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  PROJECT_FILES.forEach(file => {
+    const item = document.createElement('div');
+    item.className = 'download-file-item';
+    item.innerHTML = `
+      <div class="df-icon">${file.icon}</div>
+      <div class="df-body">
+        <div class="df-name" title="${escapeHtml(file.name)}">${escapeHtml(file.name)}</div>
+        <div class="df-meta">📄 ${file.size}</div>
+      </div>
+      <div class="df-actions">
+        <a href="${FOLDER_URL}" target="_blank" rel="noopener" class="df-btn df-download" title="فتح المجلد للتحميل">⬇️</a>
+        <button class="df-btn df-copy" onclick="copyFileLink('${escapeHtml(file.name)}')" title="نسخ الرابط">📋</button>
+      </div>
+    `;
+    grid.appendChild(item);
+  });
+}
+
+function copyFileLink(fileName) {
+  const text = `📖 دار القرآن الكريم\n📁 ملف: ${fileName}\n🔗 رابط المجلد: ${FOLDER_URL}`;
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(`📋 تم نسخ رابط "${fileName}"`);
+    }).catch(() => {
+      fallbackCopyLink(text);
+    });
+  } else {
+    fallbackCopyLink(text);
+  }
+}
+
+function fallbackCopyLink(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast('📋 تم نسخ الرابط');
+  } catch (e) {
+    showToast('⚠️ فشل النسخ');
+  }
+  document.body.removeChild(ta);
+}
+
 function initApp(){
   try{
     const savedTheme = localStorage.getItem('quran_theme') || 'default';
@@ -3519,9 +3751,10 @@ function initApp(){
     updateWardReviewUI();
     renderWardHeatmap();
     updateOfflineStatus();
+    renderDownloadFiles();
     document.getElementById('settingsModal')?.addEventListener('click',function(e){if(e.target===this)closeSettingsModal();});
     document.getElementById('registerModal')?.addEventListener('click',function(e){if(e.target===this)closeRegisterModal();});
-    console.log('✅ دار القرآن الكريم — مع تبويب حول الدار + 6 ألوان');
+    console.log('✅ دار القرآن الكريم — مع تبويب حول الدار + قسم التحميل + 6 ألوان');
   }catch(e){console.error('❌',e);}
 }
 window.addEventListener('beforeunload',()=>{stopAudio();stopWardSession();});
